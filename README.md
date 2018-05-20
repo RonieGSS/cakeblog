@@ -1,4 +1,4 @@
-# CakePHP-3 Users Blog Application
+# CakePHP-3 Users Blog Test Application
 
 Applies all CRUD functionality on users table
 
