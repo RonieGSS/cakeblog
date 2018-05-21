@@ -6,7 +6,7 @@ Applies all CRUD functionality on users table
 
 1. Clone the [Cakeblog App](https://github.com/RonieGSS/cakeblog) from the repository.
 2. On your terminal change directory to the root folder.
-3. Run the ``` docker-compose up --build -d``` command (First time run only).
+3. Pull the image ``` docker pull hxhronie/cakephp-3 ``` .
 4. Run the ``` docker-compose up -d``` simply on the next run.
 5. You can open and use the cakephp app and phpmyadmin.
 
