@@ -11,7 +11,7 @@ Applies all CRUD functionality on users table
 
 ## PHPMYADMIN Credentials
 
-1. URL => localhost:8080
+1. URL => localhost:5555
 2. server => phpmyadmin_mysql
 3. user => root
 4. password => test
