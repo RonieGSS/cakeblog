@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.6deb5
+-- version 4.7.9
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: May 20, 2018 at 11:48 AM
--- Server version: 5.7.22-0ubuntu0.17.10.1
--- PHP Version: 7.0.22-0ubuntu0.17.04.1
+-- Host: phpmyadmin_mysql:3306
+-- Generation Time: May 21, 2018 at 04:13 AM
+-- Server version: 5.7.22
+-- PHP Version: 7.2.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -36,6 +38,11 @@ CREATE TABLE IF NOT EXISTS `phinxlog` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
+-- Truncate table before insert `phinxlog`
+--
+
+TRUNCATE TABLE `phinxlog`;
+--
 -- Dumping data for table `phinxlog`
 --
 
@@ -56,15 +63,22 @@ CREATE TABLE IF NOT EXISTS `users` (
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
+--
+-- Truncate table before insert `users`
+--
+
+TRUNCATE TABLE `users`;
 --
 -- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `email`, `password`, `phone`, `created`, `modified`) VALUES
 (6, 'biboy@gmail.com', '$2y$10$409e0JrrO1hBB/v3/infueXJEQR5JO8JngVhCMvREL5ngqEFnPLse', '0998-909-6969', '2018-05-01 07:54:42', '2018-05-01 07:54:42'),
-(7, 'teralink@gmail.com', '$2y$10$r5t/hLmGzcI7ktNfhDE0XeKRv8Hvudpr8.ZqGIAHZFQEXt8Z49z/y', '0998-909-1111', '2018-05-01 08:14:59', '2018-05-01 08:14:59');
+(7, 'teralink@gmail.com', '$2y$10$r5t/hLmGzcI7ktNfhDE0XeKRv8Hvudpr8.ZqGIAHZFQEXt8Z49z/y', '0998-909-1111', '2018-05-01 08:14:59', '2018-05-01 08:14:59'),
+(8, 'tan@gmail.com', '$2y$10$y0byWIPyrwyTTvXPETwFAO2L4imsZ3E.GkuMGfJrFKL8TF46luwX2', '0988-888-9090', '2018-05-21 04:12:30', '2018-05-21 04:12:30');
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
