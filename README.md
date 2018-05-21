@@ -8,6 +8,8 @@ Applies all CRUD functionality on users table
 2. On your terminal change directory to the root folder.
 3. Run the ``` docker-compose up -d``` .
 4. You can open and use the cakephp app and phpmyadmin.
+5. Open vendor/cakephp/cakephp/src/Controller/Component/RequestHandlerComponent.php.
+6. Set $_defaultConfig['enableBeforeRedirect'] to false.
 
 ## PHPMYADMIN Credentials
 
