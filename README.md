@@ -2,7 +2,7 @@
 
 Applies all CRUD functionality on users table
 
-## Building the image and running containers
+## Using the image and running containers
 
 1. Clone the [Cakeblog App](https://github.com/RonieGSS/cakeblog) from the repository.
 2. On your terminal change directory to the root folder.
