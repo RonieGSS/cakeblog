@@ -32,7 +32,9 @@ ENV APP_HOME=/var/www/html \
     APACHE_LOG_DIR=/var/log/apache2 \
     APACHE_PID_FILE=/var/run/apache2.pid \
     APACHE_RUN_DIR=/var/run/apache2 \
-    APACHE_LOCK_DIR=/var/lock/apache2
+    APACHE_LOCK_DIR=/var/lock/apache2 \
+    COMPOSER_ALLOW_SUPERUSER=1 \
+    COMPOSER_NO_INTERACTION=1
 
 RUN usermod -u 1000 $APACHE_RUN_USER && groupmod -g 1000 $APACHE_RUN_GROUP \
     && sed -i -e "s/html/html\/webroot/g" /etc/apache2/sites-enabled/000-default.conf \
@@ -43,7 +45,7 @@ RUN usermod -u 1000 $APACHE_RUN_USER && groupmod -g 1000 $APACHE_RUN_GROUP \
 
 COPY . $APP_HOME
 
-RUN composer install --no-interaction \
+RUN composer install \
     && chown -R $APACHE_RUN_USER:$APACHE_RUN_GROUP $APP_HOME
 
 WORKDIR $APP_HOME
@@ -52,4 +54,4 @@ WORKDIR $APP_HOME
 
 RUN mkdir -p $APACHE_RUN_DIR $APACHE_LOCK_DIR $APACHE_LOG_DIR
 
-ENTRYPOINT ["sh", "-c", "composer install --no-interaction ; apache2 -DFOREGROUND"]
+ENTRYPOINT ["sh", "-c", "composer install ; apache2 -DFOREGROUND"]
